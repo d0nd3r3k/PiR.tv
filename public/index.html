@@ -1,0 +1,24 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Google TV</title>
+	
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	
+</head>
+<body>
+	<h2>Google TV</h2>
+	
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  
+  var socket = io.connect('http://localhost:3000');
+  
+  socket.on('news', function (data) {
+	console.log(data);
+	socket.emit('foobar', { my: 'data' });
+  });
+</script>	
+</body>
+</html>
