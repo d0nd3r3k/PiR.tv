@@ -7,7 +7,8 @@ var express = require('express')
   , app = express()  
   , server = require('http').createServer(app)
   , path = require('path')
-  , io = require('socket.io').listen(server);
+  , io = require('socket.io').listen(server)
+  , spawn = require('child_process').spawn;
 
 
 
@@ -47,6 +48,15 @@ server.listen(app.get('port'), function(){
 
 var ss;
 
+//Run and pipe shell script output 
+function run_shell(cmd, args, cb, end) {
+    var spawn = require('child_process').spawn,
+        child = spawn(cmd, args),
+        me = this;
+    child.stdout.on('data', function (buffer) { cb(me, buffer) });
+    child.stdout.on('end', end);
+}
+
 //Socket.io Server
 io.sockets.on('connection', function (socket) {
  
@@ -83,7 +93,20 @@ io.sockets.on('connection', function (socket) {
  });
  
  socket.on("video", function(data){
-         console.log(data);
+    
+    if( data.action === "play"){
+    var id = data.video_id,
+         url = "http://www.youtube.com/watch?v="+id;
+                 
+    var runShell = new run_shell('youtube-dl',['-o','%(id)s.%(ext)s','-f','/22/18',url],
+        function (me, buffer) { 
+            me.stdout += buffer.toString();
+            res.send(console.log(me.stdout));
+         },
+        function () { 
+            child = spawn('omxplayer',[id+'.mp4']);
+        });
+    }    
      
  });
 });
