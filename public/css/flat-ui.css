@@ -1751,8 +1751,10 @@ textarea,
 }
 
 .tile-title {
-    font-size: 20px;
-    margin: 0; }
+font-size: 20px;
+margin: 0;
+line-height: 1;
+padding: 10px;}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 2) {
     .tile.tile-hot:before {

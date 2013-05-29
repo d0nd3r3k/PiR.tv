@@ -391,10 +391,20 @@ height: 100%;
 width: 100%;
 overflow-x: hidden;
 }
+.search input{
+	padding: 22px 2px;
+	font-size: 20px;
+	width: 261px;
+}
+.search{
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	margin-left: -130px;
+}
 
-
-
-
-
+.slider{
+	margin-top: 44px;
+}
 
 

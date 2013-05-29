@@ -35,6 +35,9 @@
 			</svg>
 		</div>
 		<div class="app-body">
+			<div class=" search">
+			  <input type="text" placeholder="Search Youtube" class="span3">
+			</div>
 		<section class="slider">
 			<div class="list-wrapper">
 				<!-- List All Presentations -->
@@ -67,16 +70,24 @@
 				  	
 				  	var jsonObj = [];
 			  		$(data.feed.entry).each(function(key, item){
-				  		var a = item.id.$t.split("/");
-				  		var id = a[6];
-				  		var title = item.title.$t;
-				  		var thumbnail = item.media$group.media$thumbnail[0].url;
+				  		var a = item.id.$t.split("/"),
+				  		    id = a[6],
+				  			title = item.title.$t,
+				  			thumbnail = item.media$group.media$thumbnail[0].url,
+				  			totalSec = item.media$group.yt$duration.seconds,
+				  			hours = parseInt( totalSec / 3600 ) % 24,
+				  			minutes = parseInt( totalSec / 60 ) % 60,
+				  			seconds = totalSec % 60;
+				  		
+				  		var duration = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
+				  		
 				  		
 				  		jsonObj = {
 					  		id:id,
 					  		title:title,
-					  		thumbnail:thumbnail};
-					  		console.log(thumbnail);
+					  		thumbnail:thumbnail,
+					  		duration:duration};
+					  		
 				  		
 				  		var template = $('#videoTpl').html(),
 				  			html = Mustache.to_html(template, jsonObj);
@@ -113,10 +124,14 @@
 		});
 		$$(".r-container").tap(function(){
 			socket.emit('controll',{action:"tap"}); 
+			
 		});
 	  });
 	  $(document).ready(function(){
-		  Youtube.getVideo("foobar");
+		  
+		  $(".search input").change(function() {
+		    Youtube.getVideo($(this).val());
+		  });
 		  
 		  
 	  })
@@ -128,6 +143,7 @@
 			<div class="tile">
 				<img class="tile-image big-illustration" src="{{thumbnail}}"/>			
 				<h3 class="tile-title">{{title}}</h3>
+				<p>Duration: {{duration}}</p>
 				<a class="btn button btn-primary btn-large btn-block present" data-id={{id}}>Watch</a>
 			</div>
 		</li>
