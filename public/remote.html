@@ -40,17 +40,12 @@
 			</div>
 		<section class="slider">
 			<div class="list-wrapper">
-				<!-- List All Presentations -->
-				<div class="video-slider carousel">
 		
 					<ul class="video slides list-pres span4" style="display: block;">
 						
 					</ul>
-		
-				</div>
-
-	</div>
-</section>
+			</div>
+		</section>
 </div>
 	<!-- Les Javascripts -->
 	<script src="/socket.io/socket.io.js"></script>
@@ -63,11 +58,11 @@
 	  //Youtube
 	  var Youtube = {
 		  	getVideo: function(query){
-			  	var max_videos = 6;
+			  	var max_videos = 12;
 			  	var url = "http://gdata.youtube.com/feeds/api/videos?vq=" + escape(query) + "&max-results=" + max_videos + "&alt=json-in-script&callback=?";
 			  	
 			  	$.getJSON(url, function(data){
-				  	
+				  	$("ul.video").html("");
 				  	var jsonObj = [];
 			  		$(data.feed.entry).each(function(key, item){
 				  		var a = item.id.$t.split("/"),
@@ -95,12 +90,7 @@
 				  			
 			  		});
 			  		console.log(jsonObj);
-			  		$('.video-slider').flexslider({
-			  			animation: "slide",
-			  			start: function(slider) {
-			  				$(".video-slider").delay(500).fadeIn(200);
-			  			}
-			  		});
+			  		
 			  	});	
 		  	}
 	  }		
@@ -130,6 +120,7 @@
 	  $(document).ready(function(){
 		  
 		  $(".search input").change(function() {
+			
 		    Youtube.getVideo($(this).val());
 		  });
 		  
