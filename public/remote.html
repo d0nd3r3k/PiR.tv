@@ -60,7 +60,7 @@
 	  //Youtube
 	  var Youtube = {
 		  	getVideo: function(query){
-			  	var max_videos = 7;
+			  	var max_videos = 6;
 			  	var url = "http://gdata.youtube.com/feeds/api/videos?vq=" + escape(query) + "&max-results=" + max_videos + "&alt=json-in-script&callback=?";
 			  	
 			  	$.getJSON(url, function(data){
