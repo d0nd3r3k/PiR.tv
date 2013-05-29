@@ -46,7 +46,7 @@
 	  	 }
 	  
 	  //Socket.io	 
-	  var socket = io.connect('http://raspberrypi.local:3000/');
+	  var socket = io.connect('http://raspberrypi.local:8080/');
 	  socket.on('connect', function(data){
 		socket.emit('remote');
 		

@@ -46,7 +46,7 @@
 	<script src="js/main.js" type="text/javascript"></script>
 	<script>
 	
-	  var socket = io.connect('http://localhost:3000');
+	  var socket = io.connect('http://raspberrypi.local:8080');
 	  socket.on('connect', function(data){
 		socket.emit('screen');
 	  });
