@@ -119,10 +119,13 @@
 			$(".app-body").fadeToggle("fast", function () {});	
 		});
 		
-		
 		$(".search input").change(function() {
 			Youtube.getVideo($(this).val(), socket);
-		 });	  
+		 });
+		 
+		 socket.on("loading", function(data){
+			 console.log(data);
+		 })	  
 	  });
 	
 	</script>

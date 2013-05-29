@@ -101,7 +101,7 @@ io.sockets.on('connection', function (socket) {
     var runShell = new run_shell('youtube-dl',['-o','%(id)s.%(ext)s','-f','/22/18',url],
         function (me, buffer) { 
             me.stdout += buffer.toString();
-            res.send(console.log(me.stdout));
+            socket.emit("loading",{output: me.stdout});
          },
         function () { 
             child = spawn('omxplayer',[id+'.mp4']);
