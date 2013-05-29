@@ -226,6 +226,7 @@ margin: 0 0 0 -24px;
 	text-align: center;
 	font-family: "Open-Bold";
 	color: rgba(255,255,255,0.6);
+	z-index: 9999;
 }
 .r-header h2{
 	margin: 12px 0;

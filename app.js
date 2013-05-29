@@ -33,8 +33,8 @@ app.get('/remote', function (req, res) {
   res.sendfile(__dirname + '/public/remote.html');
 });
 
-app.get('/test', function (req, res) {
-  res.sendfile(__dirname + '/public/test.html');
+app.get('/play/:video_id', function (req, res) {
+  
 });
 
 
@@ -80,5 +80,10 @@ io.sockets.on('connection', function (socket) {
            }
      }
    }
+ });
+ 
+ socket.on("video", function(data){
+         console.log(data);
+     
  });
 });
