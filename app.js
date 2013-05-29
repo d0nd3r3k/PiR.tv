@@ -65,13 +65,19 @@ io.sockets.on('connection', function (socket) {
    if(socket.type === "remote"){
      
      if(data.action === "tap"){
-      ss.emit("controlling", {action:"enter"}); 
+         if(ss !== "undefined"){
+            ss.emit("controlling", {action:"enter"}); 
+            }
      }
      else if(data.action === "swipeLeft"){
-      ss.emit("controlling", {action:"goLeft"}); 
+      if(ss !== "undefined"){
+          ss.emit("controlling", {action:"goLeft"}); 
+          }
      }
      else if(data.action === "swipeRight"){
-       ss.emit("controlling", {action:"goRight"}); 
+       if(ss !== "undefined"){
+           ss.emit("controlling", {action:"goRight"}); 
+           }
      }
    }
  });
