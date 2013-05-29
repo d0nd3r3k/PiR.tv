@@ -23,7 +23,7 @@ var Weather = {
 	getWeather: function(key, country, city){
 		var that = this;
 		Loader.show();
-		var url = "http://api.wunderground.com/api/"+key+"/forecast10day/q/"+country+"/"+city+".json?callback=json";
+		var url = "http://api.wunderground.com/api/"+key+"/forecast10day/q/"+country+"/"+city+".json?callback=?";
 		$.getJSON(url, function(data){
 			Loader.hide();
 			var forecastObj = [];

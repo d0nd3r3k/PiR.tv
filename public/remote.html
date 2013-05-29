@@ -2,7 +2,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>rPiTV - Remote</title>
-
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/flat-ui.css" rel="stylesheet" type="text/css">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<link rel="apple-touch-icon" href="images/custom_icon.png"/>
 	<link rel="apple-touch-startup-image" href="images/startup.png">
@@ -14,7 +15,7 @@
 	
 </head>
 <body>
-	<div class="r-container">
+	<div class="r-container ">
 		<div class="r-header">
 			<h2>rPiTV Remote</h2>
 		</div>
@@ -33,13 +34,66 @@
 			 <path fill="#FFF" d="m405.02,516.21c-25.187,29.502-39.212,83.31-20.838,100.64,17.568,13.464,64.729,11.582,99.566-36.756,25.296-32.465,16.82-86.682,2.3708-101.08-21.464-16.602-52.277,4.6449-81.099,37.188z"/>
 			</svg>
 		</div>
+		<div class="app-body">
+		<section class="slider">
+			<div class="list-wrapper">
+				<!-- List All Presentations -->
+				<div class="video-slider carousel">
+		
+					<ul class="video slides list-pres span4" style="display: block;">
+						
+					</ul>
+		
+				</div>
+
 	</div>
+</section>
+</div>
 	<!-- Les Javascripts -->
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="js/jquery-2.0.1.min.js"></script>
+	<script src="js/jquery.flexslider.js"></script>
 	<script src="js/quo.js"></script>
+	<script src="js/mustache.js"></script>
 	
 	<script>
+	  //Youtube
+	  var Youtube = {
+		  	getVideo: function(query){
+			  	var max_videos = 7;
+			  	var url = "http://gdata.youtube.com/feeds/api/videos?vq=" + escape(query) + "&max-results=" + max_videos + "&alt=json-in-script&callback=?";
+			  	
+			  	$.getJSON(url, function(data){
+				  	
+				  	var jsonObj = [];
+			  		$(data.feed.entry).each(function(key, item){
+				  		var a = item.id.$t.split("/");
+				  		var id = a[6];
+				  		var title = item.title.$t;
+				  		var thumbnail = item.media$group.media$thumbnail[0].url;
+				  		
+				  		jsonObj = {
+					  		id:id,
+					  		title:title,
+					  		thumbnail:thumbnail};
+					  		console.log(thumbnail);
+				  		
+				  		var template = $('#videoTpl').html(),
+				  			html = Mustache.to_html(template, jsonObj);
+				  		$('ul.video').append(html);	
+				  			
+			  		});
+			  		console.log(jsonObj);
+			  		$('.video-slider').flexslider({
+			  			animation: "slide",
+			  			start: function(slider) {
+			  				$(".video-slider").delay(500).fadeIn(200);
+			  			}
+			  		});
+			  	});	
+		  	}
+	  }		
+		
 	  //Config
 	  document.ontouchmove = function(e){
 	  	 	 e.preventDefault();
@@ -61,7 +115,22 @@
 			socket.emit('controll',{action:"tap"}); 
 		});
 	  });
-
+	  $(document).ready(function(){
+		  Youtube.getVideo("foobar");
+		  
+		  
+	  })
+	
+	</script>
+	
+	<script id="videoTpl" type="text/template">
+		<li class="block">
+			<div class="tile">
+				<img class="tile-image big-illustration" src="{{thumbnail}}"/>			
+				<h3 class="tile-title">{{title}}</h3>
+				<a class="btn button btn-primary btn-large btn-block present" data-id={{id}}>Watch</a>
+			</div>
+		</li>
 	</script>
 </body>
 </html>

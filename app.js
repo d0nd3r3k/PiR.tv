@@ -5,8 +5,6 @@
 
 var express = require('express')
   , app = express()  
-  , routes = require('./routes')
-  , user = require('./routes/user')
   , server = require('http').createServer(app)
   , path = require('path')
   , io = require('socket.io').listen(server);
@@ -19,7 +17,6 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
@@ -35,6 +32,11 @@ app.get('/', function (req, res) {
 app.get('/remote', function (req, res) {
   res.sendfile(__dirname + '/public/remote.html');
 });
+
+app.get('/test', function (req, res) {
+  res.sendfile(__dirname + '/public/test.html');
+});
+
 
 //Socket.io Congfig
 io.set('log level', 1);
