@@ -65,17 +65,17 @@ io.sockets.on('connection', function (socket) {
    if(socket.type === "remote"){
      
      if(data.action === "tap"){
-         if(ss != "undefined"){
+         if(ss != undefined){
             ss.emit("controlling", {action:"enter"}); 
             }
      }
      else if(data.action === "swipeLeft"){
-      if(ss != "undefined"){
+      if(ss != undefined){
           ss.emit("controlling", {action:"goLeft"}); 
           }
      }
      else if(data.action === "swipeRight"){
-       if(ss != "undefined"){
+       if(ss != undefined){
            ss.emit("controlling", {action:"goRight"}); 
            }
      }
