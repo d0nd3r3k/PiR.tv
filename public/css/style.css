@@ -389,7 +389,7 @@ min-width: 320px;
 z-index: 99999;
 height: 100%;
 width: 100%;
-overflow-x: hidden;
+overflow: scroll;
 }
 .search input{
 	padding: 22px 2px;
