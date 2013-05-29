@@ -8,6 +8,7 @@
   "dependencies": {
     "express": "3.1.1",
     "jade": "*",
-    "socket.io":"0.9.14"
+    "socket.io":"0.9.14",
+    "omxcontrol":"*"
   }
 }

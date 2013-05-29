@@ -102,6 +102,7 @@ io.sockets.on('connection', function (socket) {
         function (me, buffer) { 
             me.stdout += buffer.toString();
             socket.emit("loading",{output: me.stdout});
+            console.log(me.stdout)
          },
         function () { 
             child = spawn('omxplayer',[id+'.mp4']);
