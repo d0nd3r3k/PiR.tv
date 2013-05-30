@@ -45,8 +45,8 @@
 	<script src="js/mustache.js" type="text/javascript"></script>
 	<script src="js/main.js" type="text/javascript"></script>
 	<script>
-	
-	  var socket = io.connect('http://raspberrypi.local:8080');
+		var socket = io.connect('http://192.168.0.102:8080');
+	  //var socket = io.connect('http://raspberrypi.local:8080');
 	  socket.on('connect', function(data){
 		socket.emit('screen');
 	  });
