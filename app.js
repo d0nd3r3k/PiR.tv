@@ -100,7 +100,7 @@ io.sockets.on('connection', function (socket) {
     var id = data.video_id,
          url = "http://www.youtube.com/watch?v="+id;
                  
-    var runShell = new run_shell('youtube-dl',['-o','%(id)s.%(ext)s','-f','/22/18',url],
+    var runShell = new run_shell('youtube-dl',['-o','%(id)s.%(ext)s','-f','/18/22',url],
         function (me, buffer) { 
             me.stdout += buffer.toString();
             socket.emit("loading",{output: me.stdout});

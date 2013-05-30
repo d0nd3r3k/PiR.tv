@@ -8,7 +8,7 @@
 	<link rel="apple-touch-icon" href="images/custom_icon.png"/>
 	<link rel="apple-touch-startup-image" href="images/startup.png">
 	
-	<meta name="viewport" content="width=device-width,height=device-height initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="viewport" content="width=device-width initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<meta name="apple-mobile-web-app-title" content="Remote">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	
@@ -56,11 +56,6 @@
 	
 	<script>	 
 		
-	  //Config
-	  document.ontouchmove = function(e){
-	  	 	 e.preventDefault();
-	  	 }
-	  	 
 	  	var socket = io.connect('http://192.168.0.102:8080'); 
 	  //var socket = io.connect('http://raspberrypi.local:8080/');
 	    socket.on('connect', function(data){
@@ -119,8 +114,15 @@
 		$$(".r-header").tap(function(){
 			socket.emit('controll',{action:"tap"}); 
 			$(".app-body").fadeToggle("fast", function () {});	
+			$.get('http://192.168.0.102:8080/omx/quit',function(data){
+				console.log(data);
+			});
 		});
-		
+		$$(".app-body").tap(function(){
+			$.get('http://192.168.0.102:8080/omx/pause',function(data){
+				console.log(data);
+			});
+		});
 		$(".search input").change(function() {
 			Youtube.getVideo($(this).val(), socket);
 		 });
