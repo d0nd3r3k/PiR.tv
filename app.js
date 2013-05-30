@@ -8,7 +8,8 @@ var express = require('express')
   , server = require('http').createServer(app)
   , path = require('path')
   , io = require('socket.io').listen(server)
-  , spawn = require('child_process').spawn;
+  , spawn = require('child_process').spawn
+  , omx = require('omxcontrol');
 
 
 
@@ -19,6 +20,7 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(omx());
 
 // development only
 if ('development' == app.get('env')) {
@@ -105,7 +107,8 @@ io.sockets.on('connection', function (socket) {
             console.log(me.stdout)
          },
         function () { 
-            child = spawn('omxplayer',[id+'.mp4']);
+            //child = spawn('omxplayer',[id+'.mp4']);
+            omx.start(id+'.mp4');
         });
     }    
      
