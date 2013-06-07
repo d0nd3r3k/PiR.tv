@@ -6,7 +6,7 @@ This project was born during a Workshop at [Lamba Labs - Beirut Hacker Space](ht
 
 Find the orignal post on my [blog](http://blog.donaldderek.com/2013/06/build-your-own-google-tv-using-raspberrypi-nodejs-and-socket-io/)
 
-Special Thanks to [kamicut](https://github.com/kamicut), [tUrG0n](https://github.com/tUrG0n), [Link](https://github.com/Link-) and [acrylc](https://github.com/acrylc) for their constant support and motivation.
+Special Thanks to [kamicut](https://github.com/kamicut), [emile818](https://github.com/emile818), [tUrG0n](https://github.com/tUrG0n), [Link](https://github.com/Link-) and [acrylc](https://github.com/acrylc) for their constant support and motivation.
 
 ##Interesting Forks
 -------------------
