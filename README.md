@@ -1,6 +1,6 @@
 #RaspberryPi TV
 ---------------
-This project was born during a Workshop at [Lamba Labs - Beirut Hacker Space](http://lambalabs.org/) and it was announced during the [Google IO Extend Beirut 2013 Event](https://plus.google.com/u/0/events/cp2togh80nq76q6p301ed3vkodo) Organized by [GDG-Beirut](https://plus.google.com/u/0/102062106640051908932)
+This project was born during a workshop given at [Lamba Labs - Beirut Hacker Space](http://lambalabs.org/) and it was announced during the [Google IO Extend Beirut 2013 Event](https://plus.google.com/u/0/events/cp2togh80nq76q6p301ed3vkodo) Organized by [GDG-Beirut](https://plus.google.com/u/0/102062106640051908932)
 
 ![alt text](http://blog.donaldderek.com/wp-content/uploads/2013/06/front_end_raspberry_pi_tv.png "RaspberryPi TV")
 
