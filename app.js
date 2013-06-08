@@ -37,7 +37,7 @@ app.get('/remote', function (req, res) {
 });
 
 app.get('/play/:video_id', function (req, res) {
-  
+
 });
 
 
@@ -50,7 +50,7 @@ server.listen(app.get('port'), function(){
 
 var ss;
 
-//Run and pipe shell script output 
+//Run and pipe shell script output
 function run_shell(cmd, args, cb, end) {
     var spawn = require('child_process').spawn,
         child = spawn(cmd, args),
@@ -61,7 +61,7 @@ function run_shell(cmd, args, cb, end) {
 
 //Socket.io Server
 io.sockets.on('connection', function (socket) {
- 
+
  socket.on("screen", function(data){
    socket.type = "screen";
    ss = socket;
@@ -71,46 +71,46 @@ io.sockets.on('connection', function (socket) {
    socket.type = "remote";
    console.log("Remote ready...");
  });
- 
+
  socket.on("controll", function(data){
 	console.log(data);
    if(socket.type === "remote"){
-     
+
      if(data.action === "tap"){
          if(ss != undefined){
-            ss.emit("controlling", {action:"enter"}); 
+            ss.emit("controlling", {action:"enter"});
             }
      }
      else if(data.action === "swipeLeft"){
       if(ss != undefined){
-          ss.emit("controlling", {action:"goLeft"}); 
+          ss.emit("controlling", {action:"goLeft"});
           }
      }
      else if(data.action === "swipeRight"){
        if(ss != undefined){
-           ss.emit("controlling", {action:"goRight"}); 
+           ss.emit("controlling", {action:"goRight"});
            }
      }
    }
  });
- 
+
  socket.on("video", function(data){
-    
+
     if( data.action === "play"){
     var id = data.video_id,
          url = "http://www.youtube.com/watch?v="+id;
-                 
+
     var runShell = new run_shell('youtube-dl',['-o','%(id)s.%(ext)s','-f','/18/22',url],
-        function (me, buffer) { 
+        function (me, buffer) {
             me.stdout += buffer.toString();
             socket.emit("loading",{output: me.stdout});
             console.log(me.stdout)
          },
-        function () { 
+        function () {
             //child = spawn('omxplayer',[id+'.mp4']);
             omx.start(id+'.mp4');
         });
-    }    
-     
+    }
+
  });
 });
