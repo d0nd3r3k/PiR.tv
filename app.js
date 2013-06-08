@@ -55,7 +55,7 @@ function run_shell(cmd, args, cb, end) {
     var spawn = require('child_process').spawn,
         child = spawn(cmd, args),
         me = this;
-    child.stdout.on('data', function (buffer) { cb(me, buffer) });
+    child.stdout.on('data', function (buffer) { cb(me, buffer); });
     child.stdout.on('end', end);
 }
 
@@ -104,7 +104,7 @@ io.sockets.on('connection', function (socket) {
         function (me, buffer) {
             me.stdout += buffer.toString();
             socket.emit("loading",{output: me.stdout});
-            console.log(me.stdout)
+            console.log(me.stdout);
          },
         function () {
             //child = spawn('omxplayer',[id+'.mp4']);
