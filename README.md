@@ -10,8 +10,8 @@ Special Thanks to Geek Friends [kamicut](https://github.com/kamicut), [emile818]
 
 ##Interesting Forks
 -------------------
-+[Node-mc](https://github.com/dogonthehorizon/node-mc) By [Fernando Freire](https://github.com/dogonthehorizon/)
-+[RaspberryPiTV](https://github.com/viperfx/RaspberryPiTV) by [ViperFx](https://github.com/viperfx)
+* [Node-mc](https://github.com/dogonthehorizon/node-mc) By [Fernando Freire](https://github.com/dogonthehorizon/)
+* [RaspberryPiTV](https://github.com/viperfx/RaspberryPiTV) by [ViperFx](https://github.com/viperfx)
 
 ##License
 ----------
