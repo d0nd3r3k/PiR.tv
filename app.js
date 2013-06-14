@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -41,7 +40,7 @@ app.get('/play/:video_id', function (req, res) {
 });
 
 
-//Socket.io Congfig
+//Socket.io Config
 io.set('log level', 1);
 
 server.listen(app.get('port'), function(){
