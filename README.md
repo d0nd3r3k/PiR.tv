@@ -30,8 +30,6 @@ This project was born during a workshop given at [Lamba Labs - Beirut Hacker Spa
 
 Find the orignal post on my [blog](http://blog.donaldderek.com/2013/06/build-your-own-google-tv-using-raspberrypi-nodejs-and-socket-io/)
 
-Special Thanks to Geek Friends [kamicut](https://github.com/kamicut), [Link](https://github.com/Link-), [rhamzeh](https://github.com/rhamzeh) and [acrylc](https://github.com/acrylc) for their constant support and motivation.
-
 ###Interesting Forks
 -------------------
 * [Angular-rPiTV](https://github.com/viperfx/angular-rpitv) by [ViperFx](https://github.com/viperfx)
