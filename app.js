@@ -44,7 +44,7 @@ app.get('/play/:video_id', function (req, res) {
 io.set('log level', 1);
 
 server.listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+  console.log('Pirate TV is running on port ' + app.get('port'));
 });
 
 var ss;

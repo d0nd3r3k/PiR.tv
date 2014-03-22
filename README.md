@@ -1,3 +1,15 @@
+#Install 
+
+Must have Node.js installed on the Raspberry Pi. To install Node follow this [link](https://github.com/DonaldDerek/rPi-cheat-sheet)
+
+```
+	git clone https://github.com/DonaldDerek/RaspberryPiTV.git 
+	cd RaspberyPiTV/
+	npm install
+	npm start
+```	
+
+
 #RaspberryPi TV
 ---------------
 This project was born during a workshop given at [Lamba Labs - Beirut Hacker Space](http://lambalabs.org/) and it was announced during the [Google IO Extend Beirut 2013 Event](https://plus.google.com/u/0/events/cp2togh80nq76q6p301ed3vkodo) Organized by [GDG-Beirut](https://plus.google.com/u/0/102062106640051908932)
