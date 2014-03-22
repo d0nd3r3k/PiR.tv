@@ -13,7 +13,7 @@ Must have Node.js installed on the Raspberry Pi. To install Node follow this [li
 ###Todo
 
 + ~~Change repo name to PiRtv~~ 
-+ Add [torrent-stream](https://github.com/mafintosh/torrent-stream) The low level streaming torrent engine that [peerflix](https://github.com/mafintosh/peerflix) of which [Popcorn Time](https://github.com/popcorn-team/popcorn-app) is based on
++ Add [torrent-stream](https://github.com/mafintosh/torrent-stream) The low level streaming torrent engine that [peerflix](https://github.com/mafintosh/peerflix) uses, of which [Popcorn Time](https://github.com/popcorn-team/popcorn-app) is based on
 + Add media sync
 + Add IMDB API
 + Add support to VLC
