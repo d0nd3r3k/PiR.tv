@@ -5,14 +5,14 @@
 Must have Node.js installed on the Raspberry Pi. To install Node follow this [link](https://github.com/DonaldDerek/rPi-cheat-sheet)
 
 ```
-	git clone https://github.com/DonaldDerek/RaspberryPiTV.git 
-	cd RaspberyPiTV/
+	git clone https://github.com/DonaldDerek/PiR.tv.git 
+	cd PiR.tv/
 	npm install
 	npm start
 ```	
 ###Todo
 
-+ Change repo name to PiRtv 
++ ~~Change repo name to PiRtv~~ 
 + Add [torrent-stream](https://github.com/mafintosh/torrent-stream) The low level streaming torrent engine that [peerflix](https://github.com/mafintosh/peerflix) of which [Popcorn Time](https://github.com/popcorn-team/popcorn-app) is based on
 + Add media sync
 + Add IMDB API
