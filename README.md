@@ -34,7 +34,7 @@ Find the orignal post on my [blog](http://blog.donaldderek.com/2013/06/build-you
 -------------------
 * [Angular-rPiTV](https://github.com/viperfx/angular-rpitv) by [ViperFx](https://github.com/viperfx)
 * [Node-mc](https://github.com/dogonthehorizon/node-mc) by [Fernando Freire](https://github.com/dogonthehorizon/)
-* [rPiTV-Remote-Android](https://github.com/almyz125/rPiTV-Remote-Android) by [almyz125](https://github.com/almyz125/)
+* [rPiTV-Remote-Android](https://github.com/MelonSmasher/rPiTV-Remote-Android) by [MelonSmasher](https://github.com/melonsmasher/)
 
 
 ###License
