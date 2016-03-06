@@ -21,8 +21,6 @@ Must have Node.js installed on the Raspberry Pi. To install Node follow this [li
 + Add Channels other than Youtube
 + Stream music from Soundcloud and Jamendo
 
-Support the project on [suprmasv.com](https://www.suprmasv.com/projects/45/Pirate%20TV)
-
 ### Birth
 This project was born during a workshop given at [Lamba Labs - Beirut Hacker Space](http://lambalabs.org/) and it was announced during the [Google IO Extend Beirut 2013 Event](https://plus.google.com/u/0/events/cp2togh80nq76q6p301ed3vkodo) Organized by [GDG-Beirut](https://plus.google.com/u/0/102062106640051908932)
 
