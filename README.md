@@ -1,4 +1,4 @@
-##PiR.tv (Pirate TV)
+## PiR.tv (Pirate TV)
 -------------------
 
 ### Installation
@@ -10,7 +10,7 @@ Must have Node.js installed on the Raspberry Pi. To install Node follow this [li
 	npm install
 	npm start
 ```	
-###Todo
+### Todo
 
 + ~~Change repo name to PiRtv~~ 
 + Add [torrent-stream](https://github.com/mafintosh/torrent-stream) The low level streaming torrent engine that [peerflix](https://github.com/mafintosh/peerflix) uses, of which [Popcorn Time](https://github.com/popcorn-team/popcorn-app) is based on
@@ -28,14 +28,14 @@ This project was born during a workshop given at [Lamba Labs - Beirut Hacker Spa
 
 Find the orignal post on my [blog](http://blog.donaldderek.com/2013/06/build-your-own-google-tv-using-raspberrypi-nodejs-and-socket-io/)
 
-###Interesting Forks
+### Interesting Forks
 -------------------
 * [Angular-rPiTV](https://github.com/viperfx/angular-rpitv) by [ViperFx](https://github.com/viperfx)
 * [Node-mc](https://github.com/dogonthehorizon/node-mc) by [Fernando Freire](https://github.com/dogonthehorizon/)
 * [rPiTV-Remote-Android](https://github.com/MelonSmasher/rPiTV-Remote-Android) by [MelonSmasher](https://github.com/melonsmasher/)
 
 
-###License
+### License
 ----------
 
 The MIT License (MIT)
